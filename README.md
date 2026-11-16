@@ -1,14 +1,48 @@
-# POC Objectif Permis — fichiers prêts à copier
+# Objectif Permis — POC V5 (Nuxt 4)
 
-1. Installer Node.js LTS récent (v22.21+ ou v24 LTS).
-2. `npm create nuxt@latest objectif-permis`
-3. Entrer dans le répertoire `objectif-permis`.
-4. Copier dans ce projet les dossiers `app/`, `public/` et le fichier `nuxt.config.ts` contenus dans cette archive (en écrasant les fichiers initiaux si nécessaire).
-5. `npm run dev` puis ouvrir http://localhost:3000.
-6. `npm i -g vercel` puis `vercel login`, `vercel` pour un déploiement de prévisualisation, `vercel --prod` quand le site est prêt à être publié.
+Site vitrine **Objectif Permis**, Sainte-Maure-de-Touraine.
 
-Ce POC utilise uniquement du CSS natif pour faciliter la première mise en ligne. Tu peux ajouter Tailwind ensuite via `npx nuxi@latest module add tailwindcss`.
+## Installer dans le projet Nuxt existant
 
-La photo de voiture du hero est **à ajouter** : prévoir une vraie photo du véhicule dans `public/images/voiture.jpg` et une adaptation du CSS de `.hero`.
+Copier les dossiers `app/` et `public/`, ainsi que `nuxt.config.ts`, dans le projet local.
+Ne supprimez pas le `package.json` et le `package-lock.json` de votre projet Nuxt.
 
-Important : tarifs et informations administratives à valider. Les mentions légales, la politique de confidentialité, le règlement intérieur et la conformité de la publication du dépliant doivent être finalisés avant lancement public.
+```powershell
+npm install
+npm run dev
+```
+
+Ouvrir http://localhost:3000.
+
+## Nouveautés V5
+
+- **Une seule galerie de 5 photos** (3 véhicules, 2 intérieurs), une photo affichée à la fois ; flèches gauche/droite et 5 points de navigation.
+- **Deux seuls textes** de présentation : « Nos véhicules » (photos 1–3) et « Nos espaces de formation » (photos 4–5).
+- Prise en charge des flèches du clavier et du balayage du doigt sur mobile.
+- **Menu suivi au défilement** : la rubrique visible est mise en évidence par un soulignement dégradé reprenant le bleu et l’orange de l'identité visuelle.
+- Tous les contenus tarifaires et sections V4 sont conservés.
+
+## Ajouter les photos restantes
+
+Les quatre photos manquantes doivent être fournies par l'auto-école :
+
+| Photo | Emplacement |
+| --- | --- |
+| Voiture 1 | `public/images/voiture.webp` — déjà incluse |
+| Voiture 2 | `public/images/galerie/voiture-2.jpg` |
+| Voiture 3 | `public/images/galerie/voiture-3.jpg` |
+| Intérieur 1 | `public/images/galerie/interieur-1.jpg` |
+| Intérieur 2 | `public/images/galerie/interieur-2.jpg` |
+
+Pour l'instant, les images manquantes donnent lieu à un emplacement explicite ; **aucune photo n'a été inventée**.
+La photo du héros reste dans `public/images/hero-car.png`.
+
+## Déploiement Vercel
+
+Depuis votre projet Nuxt :
+
+```powershell
+npx vercel
+```
+
+Il faudra encore valider les tarifs avec les propriétaires, ajouter les pages légales, la politique de confidentialité et les autres documents exigibles avant publication publique.
